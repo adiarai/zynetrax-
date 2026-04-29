@@ -17,10 +17,10 @@ from intelligence.data_engine import (
 )
 from openai import OpenAI
 
-_ds  = OpenAI(api_key="sk-353fa758ca544022a26922d510f6b797", base_url="https://api.deepseek.com")
-_oai = OpenAI(api_key="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")
+_ds  = OpenAI(api_key=os.environ.get("DEEPSEEK_API_KEY",""), base_url="https://api.deepseek.com")
+_oai = OpenAI(api_key=os.environ.get("OPENAI_API_KEY",""))
 
-ANTHROPIC_KEY = "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"
+ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY","")
 
 def _call_claude_app(prompt, max_tokens=1024, system=""):
     """Claude API — precise chart specs, analysis, structured output."""
@@ -1335,7 +1335,7 @@ def run_dashboard():
 
 def run_server():
     app = run_dashboard()
-    app.run_server(debug=True, host="127.0.0.1", port=8050)
+    app.run_server(debug=False, host="127.0.0.1", port=8050)
 
 if __name__ == "__main__":
     run_server()

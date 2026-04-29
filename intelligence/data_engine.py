@@ -15,8 +15,8 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 warnings.filterwarnings("ignore")
 
-DEEPSEEK_KEY = "sk-353fa758ca544022a26922d510f6b797"
-OPENAI_KEY   = "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"
+DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY","")
+OPENAI_KEY   = os.environ.get("OPENAI_API_KEY","")
 
 from openai import OpenAI
 _ds  = OpenAI(api_key=DEEPSEEK_KEY, base_url="https://api.deepseek.com")
@@ -50,7 +50,7 @@ COUNTRY_ISO = {
 # DeepSeek: text generation (summaries, narratives, chat)
 # ──────────────────────────────────────────────────────────────────────────
 
-ANTHROPIC_KEY = "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"
+ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY","")
 
 def _call_claude(prompt, max_tokens=1024, system="You are a world-class data analyst and scientific computing expert. Be precise and accurate."):
     """Call Claude Sonnet — best for precision, structured output, calculations."""
