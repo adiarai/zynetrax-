@@ -1,0 +1,121 @@
+{
+    "numeric_issues": {
+        "number_patients": "Negative values detected (min=-280.0)"
+    },
+    "schema": {
+        "id": {
+            "type": "text",
+            "unique_count": 54011
+        },
+        "parent_account": {
+            "type": "text",
+            "unique_count": 6307
+        },
+        "billing_address": {
+            "type": "text",
+            "unique_count": 40371
+        },
+        "shipping_address": {
+            "type": "text",
+            "unique_count": 42726
+        },
+        "renewal_model": {
+            "type": "categorical",
+            "unique_values": [
+                "Contract Based",
+                "N/A"
+            ]
+        },
+        "category": {
+            "type": "categorical",
+            "unique_values": [
+                "Einzelunternehmung",
+                "Tr\u00e4gerzugeh\u00f6riger Mandant",
+                "Tr\u00e4ger",
+                "N/A",
+                "Privater Betreiber",
+                "OrganisationBranch"
+            ]
+        },
+        "number_patients": {
+            "type": "numeric",
+            "mean": 4.983558904667568,
+            "median": 0.0,
+            "std": 20.136182994454003
+        },
+        "business_unit": {
+            "type": "categorical",
+            "unique_values": [
+                "MediFoxTherapy",
+                "MediFoxStationary",
+                "MediFoxAmbulant",
+                "N/A",
+                "Jugendhilfe",
+                "IntegrationSupport"
+            ]
+        }
+    },
+    "semantic_roles": {
+        "id": "identifier",
+        "parent_account": "phone",
+        "billing_address": "phone",
+        "shipping_address": "phone",
+        "renewal_model": "categorical_or_text",
+        "category": "categorical_or_text",
+        "number_patients": "numeric_metric",
+        "business_unit": "categorical_or_text"
+    },
+    "roles": {
+        "id": "Primary Key",
+        "parent_account": "Potential Foreign Key",
+        "billing_address": "Potential Foreign Key",
+        "shipping_address": "Potential Foreign Key",
+        "renewal_model": "Categorical Feature",
+        "category": "Categorical Feature",
+        "number_patients": "Numeric Feature / Possible Target",
+        "business_unit": "Categorical Feature"
+    },
+    "quality": {
+        "id": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "parent_account": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.1168
+        },
+        "billing_address": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.7475
+        },
+        "shipping_address": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.7911
+        },
+        "renewal_model": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0
+        },
+        "category": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0001
+        },
+        "number_patients": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0026,
+            "skewness": 4.3981,
+            "variance": 405.4659
+        },
+        "business_unit": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0001
+        }
+    },
+    "insights": [
+        "Column 'number_patients' is highly skewed (skewness=4.3981). This may indicate extreme outliers or non-normal distribution."
+    ],
+    "final_shape": [
+        54011,
+        9
+    ]
+}

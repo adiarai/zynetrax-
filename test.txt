@@ -1,0 +1,3 @@
+OrderID: 1001 | Customer: John | Amount: 450
+OrderID: 1002 | Customer: Anna | Amount: 300
+OrderID: 1003 | Customer: Mark | Amount: 700

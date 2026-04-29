@@ -1,0 +1,115 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "ProductID": {
+            "type": "numeric",
+            "mean": 103.5,
+            "median": 103.5,
+            "std": 1.2909944487358056
+        },
+        "Product": {
+            "type": "categorical",
+            "unique_values": [
+                "Tire",
+                "Socks",
+                "Caps",
+                "Gloves"
+            ]
+        },
+        "Category": {
+            "type": "categorical",
+            "unique_values": [
+                "Accessories",
+                "Clothing"
+            ]
+        },
+        "Price": {
+            "type": "numeric",
+            "mean": 22.5,
+            "median": 22.5,
+            "std": 6.454972243679028
+        }
+    },
+    "semantic_map": {
+        "ProductID": "identifier",
+        "Product": "categorical_or_text",
+        "Category": "categorical_or_text",
+        "Price": "monetary"
+    },
+    "roles": {
+        "ProductID": "Primary Key",
+        "Product": "Primary Key",
+        "Category": "Potential Foreign Key",
+        "Price": "Primary Key"
+    },
+    "quality": {
+        "ProductID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.0,
+            "variance": 1.6667
+        },
+        "Product": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "Category": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.5
+        },
+        "Price": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.0,
+            "variance": 41.6667
+        }
+    },
+    "insights": [
+        "No critical anomalies detected. Dataset appears structurally healthy."
+    ],
+    "dependencies": {
+        "linear_strong_pairs": [
+            {
+                "col1": "ProductID",
+                "col2": "Price",
+                "correlation": 1.0
+            }
+        ],
+        "monotonic_strong_pairs": [
+            {
+                "col1": "ProductID",
+                "col2": "Price",
+                "spearman_corr": 1.0
+            }
+        ],
+        "mutual_information_pairs": [],
+        "redundant_columns": [
+            [
+                "ProductID",
+                "Price"
+            ]
+        ],
+        "feature_ranking": [
+            {
+                "feature": "Price",
+                "score": 41.667
+            },
+            {
+                "feature": "ProductID",
+                "score": 1.667
+            }
+        ]
+    },
+    "trust_scores": {
+        "schema_score": 100.0,
+        "null_score": 100.0,
+        "outlier_score": 100.0,
+        "relationship_score": 100,
+        "text_structure_score": 100,
+        "overall_score": 100.0
+    },
+    "final_shape": [
+        4,
+        4
+    ]
+}

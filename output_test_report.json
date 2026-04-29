@@ -1,0 +1,59 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "OrderID": {
+            "type": "numeric",
+            "mean": 1001.5,
+            "median": 1001.5,
+            "std": 0.7071067811865476
+        },
+        "Customer": {
+            "type": "categorical",
+            "unique_values": [
+                "John",
+                "Anna"
+            ]
+        },
+        "Amount": {
+            "type": "numeric",
+            "mean": 375.0,
+            "median": 375.0,
+            "std": 106.06601717798213
+        }
+    },
+    "semantic_map": {
+        "OrderID": "identifier",
+        "Customer": "categorical_or_text",
+        "Amount": "monetary"
+    },
+    "roles": {
+        "OrderID": "Primary Key",
+        "Customer": "Primary Key",
+        "Amount": "Primary Key"
+    },
+    "quality": {
+        "OrderID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": NaN,
+            "variance": 0.5
+        },
+        "Customer": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "Amount": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": NaN,
+            "variance": 11250.0
+        }
+    },
+    "insights": [
+        "No critical anomalies detected. Dataset appears structurally healthy."
+    ],
+    "final_shape": [
+        2,
+        3
+    ]
+}

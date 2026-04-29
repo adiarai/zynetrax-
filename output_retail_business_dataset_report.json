@@ -1,0 +1,437 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "CustomerID": {
+            "type": "numeric",
+            "mean": 1506.7316326530613,
+            "median": 1508.5,
+            "std": 288.63292021998586
+        },
+        "ProductID": {
+            "type": "numeric",
+            "mean": 149.00306122448978,
+            "median": 149.5,
+            "std": 29.15155339231886
+        },
+        "Region": {
+            "type": "categorical",
+            "unique_values": [
+                "North",
+                "East",
+                "South",
+                "West"
+            ]
+        },
+        "Quantity": {
+            "type": "numeric",
+            "mean": 4.924489795918367,
+            "median": 5.0,
+            "std": 2.532003983512032
+        },
+        "Discount": {
+            "type": "numeric",
+            "mean": 0.15140816326530612,
+            "median": 0.15,
+            "std": 0.08632703061737584
+        },
+        "MarketingSpend": {
+            "type": "numeric",
+            "mean": 241.51571428571427,
+            "median": 238.55,
+            "std": 141.72320604316798
+        },
+        "Cost": {
+            "type": "numeric",
+            "mean": 59.58097959183674,
+            "median": 56.894999999999996,
+            "std": 29.82941080524969
+        },
+        "Sales": {
+            "type": "numeric",
+            "mean": 460.8784183673469,
+            "median": 384.875,
+            "std": 324.81604343155465
+        },
+        "Profit": {
+            "type": "numeric",
+            "mean": 169.8417448979592,
+            "median": 130.475,
+            "std": 135.0797406774512
+        },
+        "CustomerSatisfaction": {
+            "type": "numeric",
+            "mean": 72.77660204081631,
+            "median": 72.735,
+            "std": 5.228279196375834
+        },
+        "RepeatPurchaseRate": {
+            "type": "numeric",
+            "mean": 0.5639183673469389,
+            "median": 0.56,
+            "std": 0.026299785599155516
+        }
+    },
+    "semantic_map": {
+        "CustomerID": "identifier",
+        "ProductID": "identifier",
+        "Region": "categorical_or_text",
+        "Quantity": "numeric_metric",
+        "Discount": "numeric_metric",
+        "MarketingSpend": "numeric_metric",
+        "Cost": "numeric_metric",
+        "Sales": "numeric_metric",
+        "Profit": "numeric_metric",
+        "CustomerSatisfaction": "numeric_metric",
+        "RepeatPurchaseRate": "percentage"
+    },
+    "roles": {
+        "CustomerID": "Potential Foreign Key",
+        "ProductID": "Potential Foreign Key",
+        "Region": "Categorical Feature",
+        "Quantity": "Numeric Feature / Possible Target",
+        "Discount": "Numeric Feature / Possible Target",
+        "MarketingSpend": "Numeric Feature / Possible Target",
+        "Cost": "Potential Foreign Key",
+        "Sales": "Numeric Feature / Possible Target",
+        "Profit": "Numeric Feature / Possible Target",
+        "CustomerSatisfaction": "Potential Foreign Key",
+        "RepeatPurchaseRate": "Numeric Feature / Possible Target"
+    },
+    "quality": {
+        "CustomerID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.6235,
+            "skewness": -0.0514,
+            "variance": 83308.9626
+        },
+        "ProductID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.102,
+            "skewness": 0.0228,
+            "variance": 849.8131
+        },
+        "Region": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0041
+        },
+        "Quantity": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0092,
+            "skewness": 0.0566,
+            "variance": 6.411
+        },
+        "Discount": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0316,
+            "skewness": -0.0669,
+            "variance": 0.0075
+        },
+        "MarketingSpend": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.9929,
+            "skewness": 0.076,
+            "variance": 20085.4671
+        },
+        "Cost": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.9408,
+            "skewness": 0.3537,
+            "variance": 889.7937
+        },
+        "Sales": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.9898,
+            "skewness": 0.8561,
+            "variance": 105505.4621
+        },
+        "Profit": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.9837,
+            "skewness": 1.2623,
+            "variance": 18246.5363
+        },
+        "CustomerSatisfaction": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.7592,
+            "skewness": 0.0814,
+            "variance": 27.3349
+        },
+        "RepeatPurchaseRate": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.0153,
+            "skewness": 0.1072,
+            "variance": 0.0007
+        }
+    },
+    "insights": [
+        "Identifier column 'CustomerID' contains duplicates. This may break relational integrity.",
+        "Identifier column 'ProductID' contains duplicates. This may break relational integrity."
+    ],
+    "structural_intelligence": {
+        "identifiers": [
+            "CustomerID",
+            "ProductID"
+        ],
+        "dimensions": [
+            "Region"
+        ],
+        "metrics": [
+            "Discount",
+            "MarketingSpend",
+            "Cost",
+            "Sales",
+            "Profit",
+            "CustomerSatisfaction"
+        ],
+        "derived_metrics": [
+            "RepeatPurchaseRate"
+        ],
+        "low_information_columns": [
+            "Region",
+            "Quantity"
+        ],
+        "primary_outcome": "Sales",
+        "eligible_drivers": [
+            "Discount",
+            "MarketingSpend",
+            "Cost",
+            "Profit",
+            "CustomerSatisfaction"
+        ]
+    },
+    "driver_modeling": {
+        "driver_importance": [
+            {
+                "feature": "Cost",
+                "importance": 0.5855
+            },
+            {
+                "feature": "MarketingSpend",
+                "importance": 0.1582
+            },
+            {
+                "feature": "CustomerSatisfaction",
+                "importance": 0.1443
+            },
+            {
+                "feature": "Discount",
+                "importance": 0.1121
+            }
+        ],
+        "top_drivers": [
+            {
+                "feature": "Cost",
+                "importance": 0.5855
+            },
+            {
+                "feature": "MarketingSpend",
+                "importance": 0.1582
+            },
+            {
+                "feature": "CustomerSatisfaction",
+                "importance": 0.1443
+            },
+            {
+                "feature": "Discount",
+                "importance": 0.1121
+            }
+        ],
+        "model_score": 0.795
+    },
+    "scenario_simulation": {
+        "simulations": [
+            {
+                "driver": "Cost",
+                "increase_10pct_effect_%": 7.53,
+                "decrease_10pct_effect_%": -7.79
+            },
+            {
+                "driver": "CustomerSatisfaction",
+                "increase_10pct_effect_%": -2.88,
+                "decrease_10pct_effect_%": 6.1
+            },
+            {
+                "driver": "MarketingSpend",
+                "increase_10pct_effect_%": 1.84,
+                "decrease_10pct_effect_%": 0.08
+            },
+            {
+                "driver": "Discount",
+                "increase_10pct_effect_%": -0.55,
+                "decrease_10pct_effect_%": 1.11
+            }
+        ],
+        "base_prediction": 460.561
+    },
+    "executive_recommendations": {
+        "executive_summary": [
+            "Primary outcome detected: Sales",
+            "Moderate predictive relationships detected."
+        ],
+        "key_findings": [
+            "Cost shows strong influence on Sales.",
+            "CustomerSatisfaction shows strong influence on Sales."
+        ],
+        "strategic_recommendations": [
+            "Carefully optimize 'Cost' as it significantly affects Sales.",
+            "Carefully optimize 'CustomerSatisfaction' as it significantly affects Sales."
+        ],
+        "risk_alerts": [
+            "MarketingSpend shows limited measurable impact.",
+            "Discount shows limited measurable impact."
+        ]
+    },
+    "dependencies": {
+        "linear_strong_pairs": [
+            {
+                "col1": "Sales",
+                "col2": "Profit",
+                "correlation": 0.865
+            },
+            {
+                "col1": "CustomerSatisfaction",
+                "col2": "RepeatPurchaseRate",
+                "correlation": 0.994
+            }
+        ],
+        "monotonic_strong_pairs": [
+            {
+                "col1": "Quantity",
+                "col2": "Sales",
+                "spearman_corr": 0.706
+            },
+            {
+                "col1": "Sales",
+                "col2": "Profit",
+                "spearman_corr": 0.893
+            },
+            {
+                "col1": "CustomerSatisfaction",
+                "col2": "RepeatPurchaseRate",
+                "spearman_corr": 0.993
+            }
+        ],
+        "mutual_information_pairs": [
+            {
+                "feature": "Sales",
+                "target": "Quantity",
+                "mutual_information": 0.494
+            },
+            {
+                "feature": "Profit",
+                "target": "Quantity",
+                "mutual_information": 0.271
+            },
+            {
+                "feature": "Sales",
+                "target": "Cost",
+                "mutual_information": 0.302
+            },
+            {
+                "feature": "Profit",
+                "target": "Cost",
+                "mutual_information": 0.132
+            },
+            {
+                "feature": "Quantity",
+                "target": "Sales",
+                "mutual_information": 0.494
+            },
+            {
+                "feature": "Cost",
+                "target": "Sales",
+                "mutual_information": 0.302
+            },
+            {
+                "feature": "Profit",
+                "target": "Sales",
+                "mutual_information": 0.944
+            },
+            {
+                "feature": "Quantity",
+                "target": "Profit",
+                "mutual_information": 0.271
+            },
+            {
+                "feature": "Cost",
+                "target": "Profit",
+                "mutual_information": 0.132
+            },
+            {
+                "feature": "Sales",
+                "target": "Profit",
+                "mutual_information": 0.944
+            },
+            {
+                "feature": "RepeatPurchaseRate",
+                "target": "CustomerSatisfaction",
+                "mutual_information": 2.367
+            },
+            {
+                "feature": "CustomerSatisfaction",
+                "target": "RepeatPurchaseRate",
+                "mutual_information": 2.372
+            }
+        ],
+        "redundant_columns": [
+            [
+                "CustomerSatisfaction",
+                "RepeatPurchaseRate"
+            ]
+        ],
+        "feature_ranking": [
+            {
+                "feature": "Sales",
+                "score": 104428.876
+            },
+            {
+                "feature": "CustomerID",
+                "score": 51940.588
+            },
+            {
+                "feature": "MarketingSpend",
+                "score": 19942.0
+            },
+            {
+                "feature": "Profit",
+                "score": 17948.634
+            },
+            {
+                "feature": "Cost",
+                "score": 837.132
+            },
+            {
+                "feature": "ProductID",
+                "score": 86.716
+            },
+            {
+                "feature": "CustomerSatisfaction",
+                "score": 20.752
+            },
+            {
+                "feature": "Quantity",
+                "score": 0.059
+            },
+            {
+                "feature": "Discount",
+                "score": 0.0
+            },
+            {
+                "feature": "RepeatPurchaseRate",
+                "score": 0.0
+            }
+        ]
+    },
+    "trust_scores": {
+        "schema_score": 100.0,
+        "null_score": 100.0,
+        "outlier_score": 100.0,
+        "relationship_score": 100,
+        "text_structure_score": 100,
+        "overall_score": 100.0
+    },
+    "final_shape": [
+        980,
+        11
+    ]
+}

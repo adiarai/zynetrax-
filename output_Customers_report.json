@@ -1,0 +1,125 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "CustomerID": {
+            "type": "numeric",
+            "mean": 3.5,
+            "median": 3.5,
+            "std": 1.2909944487358056
+        },
+        "FirstName": {
+            "type": "categorical",
+            "unique_values": [
+                "Kevin",
+                "Mary",
+                "Mark",
+                "Anna"
+            ]
+        },
+        "LastName": {
+            "type": "categorical",
+            "unique_values": [
+                "Brown",
+                "adi",
+                "Schwarz",
+                "Adams"
+            ]
+        },
+        "Country": {
+            "type": "categorical",
+            "unique_values": [
+                "USA",
+                "Germany"
+            ]
+        },
+        "Score": {
+            "type": "numeric",
+            "mean": 693.75,
+            "median": 687.5,
+            "std": 171.23935490028765
+        }
+    },
+    "semantic_map": {
+        "CustomerID": "identifier",
+        "FirstName": "categorical_or_text",
+        "LastName": "categorical_or_text",
+        "Country": "categorical_or_text",
+        "Score": "numeric_metric"
+    },
+    "roles": {
+        "CustomerID": "Primary Key",
+        "FirstName": "Primary Key",
+        "LastName": "Primary Key",
+        "Country": "Potential Foreign Key",
+        "Score": "Primary Key"
+    },
+    "quality": {
+        "CustomerID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.0,
+            "variance": 1.6667
+        },
+        "FirstName": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "LastName": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "Country": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.5
+        },
+        "Score": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.1797,
+            "variance": 29322.9167
+        }
+    },
+    "insights": [
+        "No critical anomalies detected. Dataset appears structurally healthy."
+    ],
+    "dependencies": {
+        "linear_strong_pairs": [
+            {
+                "col1": "CustomerID",
+                "col2": "Score",
+                "correlation": -0.81
+            }
+        ],
+        "monotonic_strong_pairs": [
+            {
+                "col1": "CustomerID",
+                "col2": "Score",
+                "spearman_corr": -0.8
+            }
+        ],
+        "mutual_information_pairs": [],
+        "redundant_columns": [],
+        "feature_ranking": [
+            {
+                "feature": "Score",
+                "score": 29322.917
+            },
+            {
+                "feature": "CustomerID",
+                "score": 1.667
+            }
+        ]
+    },
+    "trust_scores": {
+        "schema_score": 100.0,
+        "null_score": 100.0,
+        "outlier_score": 100.0,
+        "relationship_score": 100,
+        "text_structure_score": 100,
+        "overall_score": 100.0
+    },
+    "final_shape": [
+        4,
+        5
+    ]
+}

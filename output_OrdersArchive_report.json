@@ -1,0 +1,323 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "OrderID": {
+            "type": "numeric",
+            "mean": 4.111111111111111,
+            "median": 4.0,
+            "std": 1.8333333333333333
+        },
+        "ProductID": {
+            "type": "numeric",
+            "mean": 103.0,
+            "median": 104.0,
+            "std": 1.7320508075688772
+        },
+        "CustomerID": {
+            "type": "numeric",
+            "mean": 2.111111111111111,
+            "median": 2.0,
+            "std": 0.927960727138337
+        },
+        "SalesPersonID": {
+            "type": "numeric",
+            "mean": 4.0,
+            "median": 4.0,
+            "std": 1.0
+        },
+        "OrderDate": {
+            "type": "categorical",
+            "unique_values": [
+                "2024-04-01",
+                "2024-04-05",
+                "2024-04-10",
+                "2024-04-20",
+                "2024-05-01",
+                "2024-05-05"
+            ]
+        },
+        "ShipDate": {
+            "type": "categorical",
+            "unique_values": [
+                "2024-04-05",
+                "2024-04-10",
+                "2024-04-25",
+                "2024-05-05",
+                "2024-05-10"
+            ]
+        },
+        "OrderStatus": {
+            "type": "categorical",
+            "unique_values": [
+                "Shipped",
+                "Delivered"
+            ]
+        },
+        "ShipAddress": {
+            "type": "categorical",
+            "unique_values": [
+                "123 Main St",
+                "456 Elm St",
+                "789 Maple St",
+                "987 Victory Lane",
+                "345 Oak St",
+                "543 Belmont Rd."
+            ]
+        },
+        "BillAddress": {
+            "type": "categorical",
+            "unique_values": [
+                "456 Billing St",
+                "789 Billing St",
+                "789 Maple St",
+                "N/A",
+                "678 Pine St",
+                "3768 Door Way"
+            ]
+        },
+        "Quantity": {
+            "type": "numeric",
+            "mean": 1.6666666666666667,
+            "median": 2.0,
+            "std": 0.5
+        },
+        "Sales": {
+            "type": "numeric",
+            "mean": 37.77777777777778,
+            "median": 50.0,
+            "std": 20.017353582440524
+        },
+        "CreationTime": {
+            "type": "categorical",
+            "unique_values": [
+                "2024-04-01 12:34:56.0000000",
+                "2024-04-05 23:22:04.0000000",
+                "2024-04-10 18:24:08.0000000",
+                "2024-04-20 05:50:33.0000000",
+                "2024-04-20 14:50:33.0000000",
+                "2024-05-01 14:02:41.0000000",
+                "2024-05-06 15:34:57.0000000",
+                "2024-05-07 13:22:05.0000000",
+                "2024-05-12 20:36:55.0000000"
+            ]
+        }
+    },
+    "semantic_map": {
+        "OrderID": "identifier",
+        "ProductID": "identifier",
+        "CustomerID": "identifier",
+        "SalesPersonID": "identifier",
+        "OrderDate": "datetime",
+        "ShipDate": "datetime",
+        "OrderStatus": "categorical_or_text",
+        "ShipAddress": "categorical_or_text",
+        "BillAddress": "categorical_or_text",
+        "Quantity": "numeric_metric",
+        "Sales": "numeric_metric",
+        "CreationTime": "datetime"
+    },
+    "roles": {
+        "OrderID": "Potential Foreign Key",
+        "ProductID": "Potential Foreign Key",
+        "CustomerID": "Potential Foreign Key",
+        "SalesPersonID": "Potential Foreign Key",
+        "OrderDate": "Potential Foreign Key",
+        "ShipDate": "Potential Foreign Key",
+        "OrderStatus": "Potential Foreign Key",
+        "ShipAddress": "Potential Foreign Key",
+        "BillAddress": "Potential Foreign Key",
+        "Quantity": "Potential Foreign Key",
+        "Sales": "Potential Foreign Key",
+        "CreationTime": "Primary Key"
+    },
+    "quality": {
+        "OrderID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.6667,
+            "skewness": -0.521,
+            "variance": 3.3611
+        },
+        "ProductID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.4444,
+            "skewness": -0.1856,
+            "variance": 3.0
+        },
+        "CustomerID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.3333,
+            "skewness": -0.2632,
+            "variance": 0.8611
+        },
+        "SalesPersonID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.3333,
+            "skewness": 0.0,
+            "variance": 1.0
+        },
+        "OrderDate": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.6667
+        },
+        "ShipDate": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.5556
+        },
+        "OrderStatus": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.2222
+        },
+        "ShipAddress": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.6667
+        },
+        "BillAddress": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.6667
+        },
+        "Quantity": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.2222,
+            "skewness": -0.8571,
+            "variance": 0.25
+        },
+        "Sales": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.6667,
+            "skewness": -0.2711,
+            "variance": 400.6944
+        },
+        "CreationTime": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        }
+    },
+    "insights": [
+        "Identifier column 'OrderID' contains duplicates. This may break relational integrity.",
+        "Identifier column 'ProductID' contains duplicates. This may break relational integrity.",
+        "Identifier column 'CustomerID' contains duplicates. This may break relational integrity.",
+        "Identifier column 'SalesPersonID' contains duplicates. This may break relational integrity."
+    ],
+    "dependencies": {
+        "linear_strong_pairs": [
+            {
+                "col1": "OrderID",
+                "col2": "SalesPersonID",
+                "correlation": 0.818
+            },
+            {
+                "col1": "OrderID",
+                "col2": "Sales",
+                "correlation": 0.706
+            },
+            {
+                "col1": "Quantity",
+                "col2": "Sales",
+                "correlation": 0.791
+            }
+        ],
+        "monotonic_strong_pairs": [
+            {
+                "col1": "OrderID",
+                "col2": "SalesPersonID",
+                "spearman_corr": 0.839
+            },
+            {
+                "col1": "ProductID",
+                "col2": "Sales",
+                "spearman_corr": 0.77
+            },
+            {
+                "col1": "Quantity",
+                "col2": "Sales",
+                "spearman_corr": 0.746
+            }
+        ],
+        "mutual_information_pairs": [
+            {
+                "feature": "CustomerID",
+                "target": "OrderID",
+                "mutual_information": 0.275
+            },
+            {
+                "feature": "SalesPersonID",
+                "target": "OrderID",
+                "mutual_information": 0.472
+            },
+            {
+                "feature": "Sales",
+                "target": "ProductID",
+                "mutual_information": 0.144
+            },
+            {
+                "feature": "OrderID",
+                "target": "CustomerID",
+                "mutual_information": 0.262
+            },
+            {
+                "feature": "SalesPersonID",
+                "target": "CustomerID",
+                "mutual_information": 0.214
+            },
+            {
+                "feature": "OrderID",
+                "target": "SalesPersonID",
+                "mutual_information": 0.445
+            },
+            {
+                "feature": "Sales",
+                "target": "Quantity",
+                "mutual_information": 0.188
+            },
+            {
+                "feature": "ProductID",
+                "target": "Sales",
+                "mutual_information": 0.29
+            },
+            {
+                "feature": "Quantity",
+                "target": "Sales",
+                "mutual_information": 0.262
+            }
+        ],
+        "redundant_columns": [],
+        "feature_ranking": [
+            {
+                "feature": "Sales",
+                "score": 267.13
+            },
+            {
+                "feature": "OrderID",
+                "score": 2.241
+            },
+            {
+                "feature": "ProductID",
+                "score": 1.333
+            },
+            {
+                "feature": "SalesPersonID",
+                "score": 0.333
+            },
+            {
+                "feature": "CustomerID",
+                "score": 0.287
+            },
+            {
+                "feature": "Quantity",
+                "score": 0.056
+            }
+        ]
+    },
+    "trust_scores": {
+        "schema_score": 100.0,
+        "null_score": 100.0,
+        "outlier_score": 100.0,
+        "relationship_score": 100.0,
+        "text_structure_score": 100,
+        "overall_score": 100.0
+    },
+    "final_shape": [
+        9,
+        12
+    ]
+}

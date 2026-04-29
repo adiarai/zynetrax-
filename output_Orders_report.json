@@ -1,0 +1,253 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "OrderID": {
+            "type": "numeric",
+            "mean": 5.222222222222222,
+            "median": 5.0,
+            "std": 3.0731814857642954
+        },
+        "ProductID": {
+            "type": "numeric",
+            "mean": 102.44444444444444,
+            "median": 102.0,
+            "std": 1.509230856356236
+        },
+        "CustomerID": {
+            "type": "numeric",
+            "mean": 2.0,
+            "median": 2.0,
+            "std": 0.8660254037844386
+        },
+        "SalesPersonID": {
+            "type": "numeric",
+            "mean": 3.6666666666666665,
+            "median": 3.0,
+            "std": 1.4142135623730951
+        },
+        "OrderDate": {
+            "type": "datetime",
+            "min_date": "2025-01-01 00:00:00",
+            "max_date": "2025-03-15 00:00:00"
+        },
+        "ShipDate": {
+            "type": "datetime",
+            "min_date": "2025-01-05 00:00:00",
+            "max_date": "2025-03-20 00:00:00"
+        },
+        "OrderStatus": {
+            "type": "categorical",
+            "unique_values": [
+                "Delivered",
+                "Shipped"
+            ]
+        },
+        "ShipAddress": {
+            "type": "categorical",
+            "unique_values": [
+                "9833 Mt. Dias Blv.",
+                "250 Race Court",
+                "8157 W. Book",
+                "5724 Victory Lane",
+                "N/A",
+                "1792 Belmont Rd.",
+                "136 Balboa Court",
+                "3768 Door Way"
+            ]
+        },
+        "BillAddress": {
+            "type": "categorical",
+            "unique_values": [
+                "1226 Shoe St.",
+                "N/A",
+                "8157 W. Book"
+            ]
+        },
+        "Quantity": {
+            "type": "numeric",
+            "mean": 1.4444444444444444,
+            "median": 2.0,
+            "std": 0.7264831572567789
+        },
+        "Sales": {
+            "type": "numeric",
+            "mean": 32.22222222222222,
+            "median": 25.0,
+            "std": 19.38283891602168
+        },
+        "CreationTime": {
+            "type": "datetime",
+            "min_date": "2025-01-01 12:34:56",
+            "max_date": "2025-03-16 23:25:15"
+        }
+    },
+    "semantic_map": {
+        "OrderID": "identifier",
+        "ProductID": "identifier",
+        "CustomerID": "identifier",
+        "SalesPersonID": "identifier",
+        "OrderDate": "datetime",
+        "ShipDate": "datetime",
+        "OrderStatus": "categorical_or_text",
+        "ShipAddress": "categorical_or_text",
+        "BillAddress": "categorical_or_text",
+        "Quantity": "numeric_metric",
+        "Sales": "numeric_metric",
+        "CreationTime": "datetime"
+    },
+    "roles": {
+        "OrderID": "Primary Key",
+        "ProductID": "Potential Foreign Key",
+        "CustomerID": "Potential Foreign Key",
+        "SalesPersonID": "Potential Foreign Key",
+        "OrderDate": "Primary Key",
+        "ShipDate": "Potential Foreign Key",
+        "OrderStatus": "Potential Foreign Key",
+        "ShipAddress": "Potential Foreign Key",
+        "BillAddress": "Potential Foreign Key",
+        "Quantity": "Potential Foreign Key",
+        "Sales": "Potential Foreign Key",
+        "CreationTime": "Primary Key"
+    },
+    "quality": {
+        "OrderID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.2632,
+            "variance": 9.4444
+        },
+        "ProductID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.4444,
+            "skewness": 0.6972,
+            "variance": 2.2778
+        },
+        "CustomerID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.3333,
+            "skewness": 0.0,
+            "variance": 0.75
+        },
+        "SalesPersonID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.3333,
+            "skewness": -0.6061,
+            "variance": 2.0
+        },
+        "OrderDate": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "ShipDate": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.8889
+        },
+        "OrderStatus": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.2222
+        },
+        "ShipAddress": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.8889
+        },
+        "BillAddress": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.3333
+        },
+        "Quantity": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.3333,
+            "skewness": -1.0143,
+            "variance": 0.5278
+        },
+        "Sales": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.7778,
+            "skewness": 0.626,
+            "variance": 375.6944
+        },
+        "CreationTime": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        }
+    },
+    "insights": {
+        "executive_summary": [
+            "Primary metric detected: 'Sales' (highest variability).",
+            "High structural trust detected across dataset.",
+            "No missing values detected."
+        ],
+        "key_findings": [
+            "Strong positive relationship detected between 'Sales' and 'ProductID' (corr=0.646)."
+        ],
+        "recommendations": [
+            "Optimizing 'ProductID' may significantly improve 'Sales'."
+        ],
+        "risk_alerts": [
+            "'ProductID' shows very low variability and may have limited impact.",
+            "'CustomerID' shows very low variability and may have limited impact.",
+            "'SalesPersonID' shows very low variability and may have limited impact.",
+            "'Quantity' shows very low variability and may have limited impact."
+        ]
+    },
+    "dependencies": {
+        "linear_strong_pairs": [],
+        "monotonic_strong_pairs": [],
+        "mutual_information_pairs": [
+            {
+                "feature": "Sales",
+                "target": "ProductID",
+                "mutual_information": 0.295
+            },
+            {
+                "feature": "CustomerID",
+                "target": "Quantity",
+                "mutual_information": 0.275
+            },
+            {
+                "feature": "ProductID",
+                "target": "Sales",
+                "mutual_information": 0.211
+            }
+        ],
+        "redundant_columns": [],
+        "feature_ranking": [
+            {
+                "feature": "Sales",
+                "score": 292.207
+            },
+            {
+                "feature": "OrderID",
+                "score": 9.444
+            },
+            {
+                "feature": "ProductID",
+                "score": 1.012
+            },
+            {
+                "feature": "SalesPersonID",
+                "score": 0.667
+            },
+            {
+                "feature": "CustomerID",
+                "score": 0.25
+            },
+            {
+                "feature": "Quantity",
+                "score": 0.176
+            }
+        ]
+    },
+    "trust_scores": {
+        "schema_score": 100.0,
+        "null_score": 100.0,
+        "outlier_score": 100.0,
+        "relationship_score": 100,
+        "text_structure_score": 100,
+        "overall_score": 100.0
+    },
+    "final_shape": [
+        9,
+        12
+    ]
+}

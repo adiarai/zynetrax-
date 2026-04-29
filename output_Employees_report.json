@@ -1,0 +1,176 @@
+{
+    "numeric_issues": {},
+    "schema": {
+        "EmployeeID": {
+            "type": "numeric",
+            "mean": 2.5,
+            "median": 2.5,
+            "std": 1.2909944487358056
+        },
+        "FirstName": {
+            "type": "categorical",
+            "unique_values": [
+                "Frank",
+                "Kevin",
+                "Mary",
+                "Michael"
+            ]
+        },
+        "LastName": {
+            "type": "categorical",
+            "unique_values": [
+                "Lee",
+                "Brown",
+                "N/A",
+                "Ray"
+            ]
+        },
+        "Department": {
+            "type": "categorical",
+            "unique_values": [
+                "Marketing",
+                "Sales"
+            ]
+        },
+        "BirthDate": {
+            "type": "categorical",
+            "unique_values": [
+                "1988-12-05",
+                "1972-11-25",
+                "1986-01-05",
+                "1977-02-10"
+            ]
+        },
+        "Gender": {
+            "type": "categorical",
+            "unique_values": [
+                "M",
+                "F"
+            ]
+        },
+        "Salary": {
+            "type": "numeric",
+            "mean": 71250.0,
+            "median": 70000.0,
+            "std": 14930.394055974097
+        },
+        "ManagerID": {
+            "type": "numeric",
+            "mean": 1.375,
+            "median": 1.25,
+            "std": 0.47871355387816905
+        }
+    },
+    "semantic_map": {
+        "EmployeeID": "identifier",
+        "FirstName": "categorical_or_text",
+        "LastName": "categorical_or_text",
+        "Department": "categorical_or_text",
+        "BirthDate": "datetime",
+        "Gender": "categorical_or_text",
+        "Salary": "numeric_metric",
+        "ManagerID": "identifier"
+    },
+    "roles": {
+        "EmployeeID": "Primary Key",
+        "FirstName": "Primary Key",
+        "LastName": "Primary Key",
+        "Department": "Potential Foreign Key",
+        "BirthDate": "Primary Key",
+        "Gender": "Potential Foreign Key",
+        "Salary": "Primary Key",
+        "ManagerID": "Potential Foreign Key"
+    },
+    "quality": {
+        "EmployeeID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.0,
+            "variance": 1.6667
+        },
+        "FirstName": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "LastName": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "Department": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.5
+        },
+        "BirthDate": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0
+        },
+        "Gender": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.5
+        },
+        "Salary": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 1.0,
+            "skewness": 0.4225,
+            "variance": 222916666.6667
+        },
+        "ManagerID": {
+            "missing_ratio": 0.0,
+            "unique_ratio": 0.75,
+            "skewness": 0.8546,
+            "variance": 0.2292
+        }
+    },
+    "insights": [
+        "Identifier column 'ManagerID' contains duplicates. This may break relational integrity."
+    ],
+    "dependencies": {
+        "linear_strong_pairs": [
+            {
+                "col1": "EmployeeID",
+                "col2": "Salary",
+                "correlation": 0.994
+            }
+        ],
+        "monotonic_strong_pairs": [
+            {
+                "col1": "EmployeeID",
+                "col2": "Salary",
+                "spearman_corr": 1.0
+            }
+        ],
+        "mutual_information_pairs": [],
+        "redundant_columns": [
+            [
+                "EmployeeID",
+                "Salary"
+            ]
+        ],
+        "feature_ranking": [
+            {
+                "feature": "Salary",
+                "score": 222916666.667
+            },
+            {
+                "feature": "EmployeeID",
+                "score": 1.667
+            },
+            {
+                "feature": "ManagerID",
+                "score": 0.172
+            }
+        ]
+    },
+    "trust_scores": {
+        "schema_score": 100.0,
+        "null_score": 100.0,
+        "outlier_score": 100.0,
+        "relationship_score": 100,
+        "text_structure_score": 100,
+        "overall_score": 100.0
+    },
+    "final_shape": [
+        4,
+        8
+    ]
+}

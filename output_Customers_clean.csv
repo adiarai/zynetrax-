@@ -1,0 +1,5 @@
+CustomerID,FirstName,LastName,Country,Score
+2,Kevin,Brown,USA,900.0
+3,Mary,adi,USA,750.0
+4,Mark,Schwarz,Germany,500.0
+5,Anna,Adams,USA,625.0

@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+dashboard/__pycache__/
+intelligence/__pycache__/
+*.csv
+output_*/
