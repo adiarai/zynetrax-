@@ -20,8 +20,11 @@ from openai import OpenAI
 _ds  = OpenAI(api_key=os.environ.get("DEEPSEEK_API_KEY",""), base_url="https://api.deepseek.com")
 _oai = OpenAI(api_key=os.environ.get("OPENAI_API_KEY",""))
 def _call_oai(p,max_tokens=1500):
+    key=os.environ.get("OPENAI_API_KEY","")
+    print("OAI call key_len:",len(key))
     try:
         r=_oai.chat.completions.create(model="gpt-4o-mini",messages=[{"role":"user","content":p}],max_tokens=max_tokens,temperature=0.7)
+        print("OAI OK chars:",len(r.choices[0].message.content))
         return r.choices[0].message.content.strip()
     except Exception as e:
         print("OpenAI error:",e); return ""
