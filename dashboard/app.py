@@ -19,6 +19,12 @@ from openai import OpenAI
 
 _ds  = OpenAI(api_key=os.environ.get("DEEPSEEK_API_KEY",""), base_url="https://api.deepseek.com")
 _oai = OpenAI(api_key=os.environ.get("OPENAI_API_KEY",""))
+def _call_oai(p,max_tokens=1500):
+    try:
+        r=_oai.chat.completions.create(model="gpt-4o-mini",messages=[{"role":"user","content":p}],max_tokens=max_tokens,temperature=0.7)
+        return r.choices[0].message.content.strip()
+    except Exception as e:
+        print("OpenAI error:",e); return ""
 
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY","")
 
@@ -1378,7 +1384,7 @@ def run_dashboard():
             stats=stats_str[:1500],
             sample=df.head(5).to_string()[:800]
         )
-        full_report = _call_claude_app(prompt, max_tokens=2000) or _call_llm(prompt, max_tokens=1500) or llm
+        full_report = _call_oai(prompt, max_tokens=2000) or llm
 
         # ── On-screen report sections ────────────────────────────────────
         report_sections = []
